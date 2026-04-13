@@ -6,12 +6,12 @@
 <title>Idea Parking Lot</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
 <style>
   /* ── CONFIG: paste your Supabase URL + anon key here ── */
   :root {
     --sb-url: 'PASTE_YOUR_SUPABASE_URL';
-    --sb-key: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVic2twdXJ0emdpbGpocWxvbGJmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYwMTU0NzAsImV4cCI6MjA5MTU5MTQ3MH0.qQl-mjVzfpJTFvdEYWiu6-CqKGFzgcLmlFP3NgUphOs';
+    --sb-key: 'PASTE_YOUR_SUPABASE_ANON_KEY';
 
     --bg: #0f0f0e;
     --bg2: #1a1a18;
@@ -993,7 +993,7 @@ async function parkIdea() {
   filterStatus = 'all'; filterTag = 'all'; searchQ = '';
   document.getElementById('search-input').value = '';
   document.querySelectorAll('[data-s]').forEach(c => c.classList.toggle('active', c.dataset.s === 'all'));
-  await addIdea(text, tag, status, energy=selectedEnergy||'medium');
+  await addIdea(text, tag, status, selectedEnergy||'medium');
   document.getElementById('ideas-list').firstChild?.scrollIntoView({ behavior:'smooth', block:'nearest' });
 }
 
